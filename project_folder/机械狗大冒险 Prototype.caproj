@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>机械狗大冒险 Prototype</name>
+    <description></description>
+    <version>0.0.4a</version>
+    <author>东方异梦境制作组</author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id>th_gf_dinergate_adv</app-id>
+    <unique-id>3phjf8c2bcezm</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Game">
+            <object-folder name="Decor">
+                <object-folder name="Functional" />
+                <object-folder name="Non-functional" />
+                <object-folder name="Waypoints">
+                    <object-type name="Waypoint0" sid="643568348275906">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="679837287061046" speed="5">
+                                <frame duration="1" hotspotX="0.454545" hotspotY="0.348315" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+            </object-folder>
+        </object-folder>
+        <object-type name="BackgroundTile" sid="841239000582108">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Player" sid="570553611905290">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="180226196492166">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="631730431452229">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="828204791589512">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="255272691230748" speed="5">
+                    <frame duration="1" hotspotX="0.528926" hotspotY="0.434343" original-source="D:\THE_DATAS\Programming_Related\TODO\Construct 2\机械狗大冒险 Prototype\dinergate.png">
+                        <collision-poly>
+                            <point x="0.0578512" y="0.446478" />
+                            <point x="0.289256" y="0.252525" />
+                            <point x="0.892562" y="0.252525" />
+                            <point x="0.892562" y="0.838384" />
+                            <point x="0.132231" y="0.838384" />
+                            <point x="0.157025" y="0.555556" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SolidTile" sid="401385673428472">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="202465030746802">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="MovingSolidTile" sid="775653710785072">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="803245474052034">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="968769422945090">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="JumpThruTile" sid="588993576295057">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="882352226114657">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="Keyboard" sid="576121341054754">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Text" sid="981601471823884">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Door" sid="150607695178139">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="leadsTo" sid="698003403293385" type="string" />
+                <instance-variable comment="0 - Default/Normal, 1 - Locked, 2 - Opening, 3 - Closing" name="status" sid="425470944090115" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="298695931856431" speed="5">
+                    <frame duration="1" hotspotX="0.437126" hotspotY="0.539823">
+                        <collision-poly>
+                            <point x="0.0598801" y="0.0309735" />
+                            <point x="0.934132" y="0.039823" />
+                            <point x="0.916167" y="0.977876" />
+                            <point x="0.0479042" y="0.960177" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Locked" pingpong="0" repeatcount="1" repeatto="0" sid="997805391723983" speed="5">
+                    <frame duration="1" hotspotX="0.437126" hotspotY="0.539823">
+                        <collision-poly>
+                            <point x="0.0598801" y="0.0309735" />
+                            <point x="0.934132" y="0.039823" />
+                            <point x="0.916167" y="0.977876" />
+                            <point x="0.0479042" y="0.960177" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Trap" sid="477545659190461">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="186335697230906">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372636242448297" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.472" y="0.376" />
+                            <point x="0.57" y="0.372" />
+                            <point x="0.724" y="0.544" />
+                            <point x="0.336" y="0.544" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DebugText" sid="367383522433038">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="DecorTable" sid="283392640299975">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Weight of this decoration, in kilogram" name="weight" sid="102652514213270" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="331348991553906">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="400492048285317">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="606597522564990">
+                    <behavior id="custom" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="307685492779073" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.108" y="0.292" />
+                            <point x="0.876" y="0.292" />
+                            <point x="0.739625" y="0.348" />
+                            <point x="0.73925" y="0.652" />
+                            <point x="0.494875" y="0.304" />
+                            <point x="0.2665" y="0.652" />
+                            <point x="0.26675" y="0.34875" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="300118773654167">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Enemy" sid="393605723417310">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="0 - Alternating; 1 - One-direction (left); 2 - One-direction (right); 3 - Randomly select a direction" name="patrolMode" sid="365977827397411" type="number" />
+                <instance-variable comment="In seconds, amount of time to wait after arriving at patrol point" name="patrolWaitTime" sid="614996597563052" type="number" />
+                <instance-variable comment="In seconds, time to wait will be randomly shifted, postively or negatively, by at most this amount" name="patrolWaitTimeRandomness" sid="720044852760426" type="number" />
+                <instance-variable comment="In pixles, how far the next patrol point should be" name="patrolDistance" sid="794398080096592" type="number" />
+                <instance-variable comment="In pixles, next patrol point location will be randomly shifted, positvely or negatively, by at most this amount" name="patrolDistanceRandomness" sid="135597564636478" type="number" />
+                <instance-variable name="patrolPointNext" sid="666060062652772" type="number" />
+                <instance-variable name="patrolPointPrev" sid="821554179333046" type="number" />
+                <instance-variable name="patrolPointOriginX" sid="554705275715324" type="number" />
+                <instance-variable name="patrolPointOriginY" sid="382014752483448" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Turret" sid="959559728689752">
+                    <behavior id="Turret" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="649557132644922">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="850901825318552">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="876442158616293" speed="5">
+                    <frame duration="1" hotspotX="0.542169" hotspotY="0.497674">
+                        <image-point name="muzzle" x="0.96988" y="0.493023" />
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.542169" y="0" />
+                            <point x="0.542169" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="703588799341789">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="665054495409656">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="484382952391493">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="655004694630871" speed="5">
+                    <frame duration="1" hotspotX="0.653846" hotspotY="0.583333" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
+        <layout>Layout 3.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>ES Gameplay Controls.xml</event-sheet>
+        <event-sheet>ES Layout 2.xml</event-sheet>
+        <event-sheet>ES Layout 1.xml</event-sheet>
+        <event-sheet>ES Layout 3.xml</event-sheet>
+        <event-sheet>ES Door.xml</event-sheet>
+        <event-sheet>ES Init Objects.xml</event-sheet>
+        <event-sheet>ES Trap.xml</event-sheet>
+        <event-sheet>ES Decor.xml</event-sheet>
+        <event-sheet>ES Enemy.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="20" />
+        <global-instance type="Function" uid="51" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

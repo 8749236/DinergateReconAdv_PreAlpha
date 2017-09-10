@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES Trap</name>
+    <events>
+        <event-group description="Defined event handler and local vars for Traps" sid="607185841396548" title="Trap Events">
+            <sub-events>
+                <variable constant="0" name="newJumpStrength" sid="294438811095985" static="0" type="number">1000</variable>
+                <variable constant="0" name="newJumpSustain" sid="617186600282052" static="0" type="number">0</variable>
+                <comment>似乎System.wait会使得当前函数呼叫终止，在过了一段时间后会继续，而在这个间隔中，非Static的变量会重置为初始数值</comment>
+                <variable constant="0" name="originalJumpStrength" sid="478174040937016" static="1" type="number">0</variable>
+                <variable constant="0" name="originalJumpSustain" sid="805818335434253" static="1" type="number">0</variable>
+                <variable comment="Trap will be triggered when it is possible to do so" constant="0" name="armed" sid="735288309098467" static="1" type="number">0</variable>
+                <comment>找到了更简单的实现方法</comment>
+                <event-block sid="494855488407533">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="237901183582998" type="Trap">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-9" name="Set value" sid="422590448059743" type="System">
+                            <param id="0" name="Variable">armed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="386331935593154" type="Player">
+                            <param id="0" name="Vector Y">-newJumpStrength</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>这个触发式机关会让机械狗飞上天</comment>
+                <event-block disabled="1" sid="868119725335725">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="966759018172535" type="System">
+                            <param id="0" name="Variable">armed</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="359161641094931" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="858609537949778" type="System">
+                            <param id="0" name="Variable">armed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="692942921083412" type="System">
+                            <param id="0" name="Variable">originalJumpStrength</param>
+                            <param id="1" name="Value">Player.Platform.JumpStrength</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="885730478894704" type="System">
+                            <param id="0" name="Variable">originalJumpSustain</param>
+                            <param id="1" name="Value">Player.Platform.JumpSustain</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="172482865490347" type="Player">
+                            <param id="0" name="Jump strength">newJumpStrength</param>
+                        </action>
+                        <action behavior="Platform" id="14" name="Set jump sustain" sid="482653203088882" type="Player">
+                            <param id="0" name="Jump sustain">newJumpSustain</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="744587219551360" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="103177287602996" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="303752947189068" type="DebugText">
+                            <param id="0" name="Text">originalJumpStrength</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="524681966406815" type="Player">
+                            <param id="0" name="Jump strength">originalJumpStrength</param>
+                        </action>
+                        <action behavior="Platform" id="14" name="Set jump sustain" sid="455798242811174" type="Player">
+                            <param id="0" name="Jump sustain">originalJumpSustain</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

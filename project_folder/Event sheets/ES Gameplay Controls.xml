@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES Gameplay Controls</name>
+    <events>
+        <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
+        <event-block sid="809796505558713">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="798961500266759" type="Keyboard">
+                    <param id="0" name="Key">40 (Down arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="474107161792702" type="Player" />
+            </actions>
+        </event-block>
+        <comment>Allow WASD as alternate controls to arrow keys.</comment>
+        <event-block sid="649224649607741">
+            <conditions>
+                <condition id="2" name="Key is down" sid="924800976050944" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="146174494236751" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="736405310336513">
+            <conditions>
+                <condition id="2" name="Key is down" sid="318706442627004" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="612581775513611" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="210226518798390">
+            <conditions>
+                <condition id="2" name="Key is down" sid="948659076640896" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="149598414300213" type="Player" />
+            </actions>
+        </event-block>
+        <event-block sid="674228055262438">
+            <conditions>
+                <condition id="2" name="Key is down" sid="443538745028652" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="672629702858627" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Mirror the player&apos;s image so they appear facing the right way when moving left or right.</comment>
+        <event-block any="1" sid="754950369147510">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="617383721975858" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="526853541444215" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="494278510749766" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="794207374352630">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="762642104646279" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="968374262502155" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="725096402108787" type="Player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>If the player falls off the bottom of the layout, restart the level.</comment>
+        <event-block any="1" sid="190110885243263">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="276767007656773" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="488789103693214" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="448009955089489" type="System" />
+            </actions>
+        </event-block>
+        <comment>按下Ctrl来移动关卡环境中的装饰物</comment>
+        <event-block sid="528847204992832">
+            <conditions>
+                <condition id="2" name="Key is down" sid="303547728666133" type="Keyboard">
+                    <param id="0" name="Key">17 (Ctrl)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="168663304520587" type="Player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="420059493252780">
+            <conditions>
+                <condition id="2" inverted="1" name="Key is down" sid="230098560326839" type="Keyboard">
+                    <param id="0" name="Key">17 (Ctrl)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="774073424821316" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>在门前按空格键可以更换房间或场景（关卡不会被更换，直到完成）</comment>
+        <event-block sid="548644217283731">
+            <conditions>
+                <condition id="2" name="Key is down" sid="361679965373968" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="680729686658217" type="Player">
+                    <param id="0" name="Object">Door</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="467078389035213" type="System">
+                    <param id="0" name="Layout">Door.leadsTo</param>
+                </action>
+                <action id="-10" name="Set value" sid="547398885376961" type="Door">
+                    <param id="0" name="Instance variable">status</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Initialize particles</comment>
+        <event-block sid="712382250181065">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="520668041824152" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

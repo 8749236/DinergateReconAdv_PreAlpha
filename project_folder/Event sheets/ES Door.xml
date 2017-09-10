@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ES Door</name>
+    <events>
+        <event-block sid="880219164022525">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="591712463917490" type="Door">
+                    <param id="0" name="Instance variable">leadsTo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="900084091823598" type="Door">
+                    <param id="0" name="Instance variable">status</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="870708008830146">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="126476656751863" type="Door">
+                    <param id="0" name="Instance variable">status</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="622488991664831" type="Door">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="304374297072437">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="234442190251877" type="Door">
+                    <param id="0" name="Instance variable">status</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="197341215834582" type="Door">
+                    <param id="0" name="Animation">&quot;Locked&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="914010493356832">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="896005383158233" type="Door">
+                    <param id="0" name="Instance variable">status</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="734785872269150" type="Door">
+                    <param id="0" name="Animation">&quot;Opening&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="898819798407873">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="298497206873897" type="Door">
+                    <param id="0" name="Instance variable">status</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="396608887265776" type="Door">
+                    <param id="0" name="Animation">&quot;Closing&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
