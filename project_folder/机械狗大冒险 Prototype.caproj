@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>机械狗大冒险 Prototype</name>
-    <description></description>
+    <description>Dinergate&apos;s Adventure Prototype</description>
     <version>0.0.4a</version>
     <author>东方异梦境制作组</author>
     <author-email></author-email>
@@ -15,6 +15,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -275,6 +276,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Touch" sid="719732603297534">
+            <plugin id="Touch" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -296,6 +300,11 @@
     <global-instances>
         <global-instance type="Keyboard" uid="20" />
         <global-instance type="Function" uid="51" />
+        <global-instance type="Touch" uid="58">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
     <music-folder />
