@@ -58,6 +58,10 @@
                 <object-folder name="Waypoints">
                     <object-type name="Waypoint0" sid="643568348275906">
                         <plugin id="Sprite" />
+                        <instance-variables>
+                            <instance-variable comment="Code to distinguish waypoints for one object from waypoints for others" name="waypointCode" sid="805629460448357" type="number" />
+                            <instance-variable comment="This means this is the furthest waypoint for the specified waypoint code, patrol should not go pass this waypoint" name="waypointBoundry" sid="934102335317184" type="boolean" />
+                        </instance-variables>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="679837287061046" speed="5">
                                 <frame duration="1" hotspotX="0.454545" hotspotY="0.348315" />
@@ -228,12 +232,9 @@
                 <instance-variable comment="0 - Alternating; 1 - One-direction (left); 2 - One-direction (right); 3 - Randomly select a direction" name="patrolMode" sid="365977827397411" type="number" />
                 <instance-variable comment="In seconds, amount of time to wait after arriving at patrol point" name="patrolWaitTime" sid="614996597563052" type="number" />
                 <instance-variable comment="In seconds, time to wait will be randomly shifted, postively or negatively, by at most this amount" name="patrolWaitTimeRandomness" sid="720044852760426" type="number" />
-                <instance-variable comment="In pixles, how far the next patrol point should be" name="patrolDistance" sid="794398080096592" type="number" />
-                <instance-variable comment="In pixles, next patrol point location will be randomly shifted, positvely or negatively, by at most this amount" name="patrolDistanceRandomness" sid="135597564636478" type="number" />
-                <instance-variable name="patrolPointNext" sid="666060062652772" type="number" />
-                <instance-variable name="patrolPointPrev" sid="821554179333046" type="number" />
-                <instance-variable name="patrolPointOriginX" sid="554705275715324" type="number" />
-                <instance-variable name="patrolPointOriginY" sid="382014752483448" type="number" />
+                <instance-variable comment="Records when it had arrived current patrol point" name="patrolPointArrivalTime" sid="512771331024174" type="number" />
+                <instance-variable comment="True if this object is already on its way to next waypoint" name="patrolEnroute" sid="300602031714487" type="boolean" />
+                <instance-variable comment="4 = wants to move left; 6 = right; 8 = up; 2 = down" name="motionIntent" sid="801004168587486" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Turret" sid="959559728689752">

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ES Gameplay Controls</name>
     <events>
+        <variable comment="Degrees of tilt that gyro will trigger the control" constant="1" name="GYRO_CONTROL_THRESHOLD" sid="885425086376036" static="0" type="number">10</variable>
         <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
         <event-block sid="809796505558713">
             <conditions>
@@ -23,7 +24,7 @@
                 <condition id="8" name="Compare orientation" sid="126208696610870" type="Touch">
                     <param id="0" name="Orientation">1</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Angle">45</param>
+                    <param id="2" name="Angle">2*GYRO_CONTROL_THRESHOLD</param>
                 </condition>
             </conditions>
             <actions>
@@ -40,7 +41,7 @@
                 <condition id="8" name="Compare orientation" sid="979108604395936" type="Touch">
                     <param id="0" name="Orientation">2</param>
                     <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Angle">-15</param>
+                    <param id="2" name="Angle">-GYRO_CONTROL_THRESHOLD</param>
                 </condition>
             </conditions>
             <actions>
@@ -57,7 +58,7 @@
                 <condition id="8" name="Compare orientation" sid="625087437837967" type="Touch">
                     <param id="0" name="Orientation">1</param>
                     <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Angle">-45</param>
+                    <param id="2" name="Angle">-2*GYRO_CONTROL_THRESHOLD</param>
                 </condition>
             </conditions>
             <actions>
@@ -72,7 +73,7 @@
                 <condition id="8" name="Compare orientation" sid="464590996102881" type="Touch">
                     <param id="0" name="Orientation">2</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Angle">15</param>
+                    <param id="2" name="Angle">GYRO_CONTROL_THRESHOLD</param>
                 </condition>
             </conditions>
             <actions>
@@ -90,6 +91,11 @@
                 <condition id="0" name="On key pressed" sid="526853541444215" type="Keyboard">
                     <param id="0" name="Key">65 (A)</param>
                 </condition>
+                <condition id="8" name="Compare orientation" sid="376439247710186" type="Touch">
+                    <param id="0" name="Orientation">2</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Angle">-GYRO_CONTROL_THRESHOLD</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="7" name="Set mirrored" sid="494278510749766" type="Player">
@@ -104,6 +110,11 @@
                 </condition>
                 <condition id="0" name="On key pressed" sid="968374262502155" type="Keyboard">
                     <param id="0" name="Key">68 (D)</param>
+                </condition>
+                <condition id="8" name="Compare orientation" sid="186525304658087" type="Touch">
+                    <param id="0" name="Orientation">2</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Angle">GYRO_CONTROL_THRESHOLD</param>
                 </condition>
             </conditions>
             <actions>

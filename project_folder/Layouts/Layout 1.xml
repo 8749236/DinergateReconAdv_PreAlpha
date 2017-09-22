@@ -104,8 +104,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>160</x>
-                        <y>624</y>
+                        <x>144</x>
+                        <y>592</y>
                         <z>0</z>
                         <width>84</width>
                         <height>70</height>
@@ -333,8 +333,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>624.159057617</x>
-                        <y>432.067077637</y>
+                        <x>624</x>
+                        <y>432</y>
                         <z>0</z>
                         <width>372.034545898</width>
                         <height>32</height>
@@ -441,7 +441,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>160</x>
+                        <x>144</x>
                         <y>336</y>
                         <z>0</z>
                         <width>96</width>
@@ -859,8 +859,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>768</x>
-                        <y>400</y>
+                        <x>288</x>
+                        <y>704</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
@@ -882,12 +882,9 @@
                         <patrolMode>0</patrolMode>
                         <patrolWaitTime>5</patrolWaitTime>
                         <patrolWaitTimeRandomness>0</patrolWaitTimeRandomness>
-                        <patrolDistance>100</patrolDistance>
-                        <patrolDistanceRandomness>0</patrolDistanceRandomness>
-                        <patrolPointNext>0</patrolPointNext>
-                        <patrolPointPrev>0</patrolPointPrev>
-                        <patrolPointOriginX>0</patrolPointOriginX>
-                        <patrolPointOriginY>0</patrolPointOriginY>
+                        <patrolPointArrivalTime>0</patrolPointArrivalTime>
+                        <patrolEnroute>false</patrolEnroute>
+                        <motionIntent>0</motionIntent>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Turret">
@@ -905,7 +902,7 @@
                         </behavior-instance>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>110</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
@@ -929,11 +926,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>640</x>
-                        <y>656</y>
+                        <x>544</x>
+                        <y>256</y>
                         <z>0</z>
-                        <width>166</width>
-                        <height>215</height>
+                        <width>83</width>
+                        <height>107</height>
                         <depth>0</depth>
                         <hotspotX>0.542168677</hotspotX>
                         <hotspotY>0.497674406</hotspotY>
@@ -983,11 +980,41 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <waypointCode>0</waypointCode>
+                        <waypointBoundry>true</waypointBoundry>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>352</x>
-                        <y>688</y>
+                        <x>976</x>
+                        <y>432</y>
+                        <z>0</z>
+                        <width>11</width>
+                        <height>89</height>
+                        <depth>0</depth>
+                        <hotspotX>0.454545468</hotspotX>
+                        <hotspotY>0.348314613</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Waypoint0" uid="59">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <waypointCode>0</waypointCode>
+                        <waypointBoundry>true</waypointBoundry>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>368</x>
+                        <y>272</y>
                         <z>0</z>
                         <width>11</width>
                         <height>89</height>
