@@ -890,7 +890,7 @@
                         <behavior-instance type="Turret">
                             <properties>
                                 <range>600</range>
-                                <rate-of-fire>0.2</rate-of-fire>
+                                <rate-of-fire>1</rate-of-fire>
                                 <rotate>No</rotate>
                                 <rotate-speed>180</rotate-speed>
                                 <target-mode>First in range</target-mode>
@@ -918,7 +918,7 @@
                             <properties>
                                 <obstacles>Solids</obstacles>
                                 <range>10000</range>
-                                <cone-of-view>45</cone-of-view>
+                                <cone-of-view>60</cone-of-view>
                                 <use-collision-cells>Yes</use-collision-cells>
                             </properties>
                         </behavior-instance>
@@ -926,14 +926,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>544</x>
-                        <y>256</y>
+                        <x>608</x>
+                        <y>592</y>
                         <z>0</z>
-                        <width>83</width>
-                        <height>107</height>
+                        <width>200</width>
+                        <height>180</height>
                         <depth>0</depth>
-                        <hotspotX>0.542168677</hotspotX>
-                        <hotspotY>0.497674406</hotspotY>
+                        <hotspotX>0.474999994</hotspotX>
+                        <hotspotY>0.388888896</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

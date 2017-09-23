@@ -8,22 +8,50 @@
                 <event-block sid="222021211578320">
                     <conditions>
                         <condition behavior="Turret" id="1" name="On shoot" sid="161330722305685" type="Enemy" />
-                        <condition behavior="LineOfSight" id="1" name="Has LOS to position" sid="372219569405591" type="Enemy">
-                            <param id="0" name="X">Player.X</param>
-                            <param id="1" name="Y">Player.Y</param>
-                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="112426780768648" type="Enemy">
-                            <param id="0" name="Object">Bullet</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">1</param>
-                        </action>
-                        <action id="-22" name="Set angle toward position" sid="906213919979747" type="Bullet">
-                            <param id="0" name="X">Player.X</param>
-                            <param id="1" name="Y">Player.Y</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="279944273097313">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="1" name="Has LOS to position" sid="372219569405591" type="Enemy">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="191575392007468" type="Enemy">
+                                    <param id="0" name="Speed">33</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="588036839508131" type="Enemy">
+                                    <param id="0" name="Animation">&quot;Shoot&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="527298258178038" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="112426780768648" type="Enemy">
+                                    <param id="0" name="Object">Bullet</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="906213919979747" type="Bullet">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="866571386242003">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="154250529643255" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="788008241377094" type="Enemy">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="293968291967373">
                     <conditions>
@@ -175,7 +203,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="418329600657316" type="System">
+                                <action disabled="1" id="-9" name="Set value" sid="418329600657316" type="System">
                                     <param id="0" name="Variable">patrolPointDirection</param>
                                     <param id="1" name="Value">random(2) - 1</param>
                                 </action>
